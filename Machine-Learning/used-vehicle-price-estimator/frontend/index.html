@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoValue | Car Price Estimator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">Auto<span>Value</span></a>
+        <span class="nav-label">USED VEHICLE PRICE ESTIMATOR</span>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="hero-text">
+                <span class="eyebrow">SMART CAR VALUATION</span>
+                <h1>Discover what your car is <span>worth.</span></h1>
+                <p>
+                    Enter your vehicle details and let our machine learning
+                    model estimate its market value.
+                </p>
+            </div>
+
+            <div class="hero-icon">🚘</div>
+        </section>
+
+        <section class="content-grid">
+
+            <div class="form-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Vehicle Details</h2>
+                        <p>Provide accurate information about your car.</p>
+                    </div>
+                    <span class="step-label">01 / DETAILS</span>
+                </div>
+
+                <form id="prediction-form">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brand">Brand</label>
+                            <select id="brand" required>
+                                <option value="">Select brand</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <select id="model" required disabled>
+                                <option value="">Select model</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="transmission">Transmission</label>
+                            <select id="transmission" required>
+                                <option value="">Select transmission</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fuel_type">Fuel Type</label>
+                            <select id="fuel_type" required>
+                                <option value="">Select fuel type</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="year">Manufacturing Year</label>
+                            <input
+                                type="number"
+                                id="year"
+                                placeholder="e.g. 2020"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="capacity">Engine Capacity (cc)</label>
+                            <input
+                                type="number"
+                                id="capacity"
+                                placeholder="e.g. 1500"
+                                min="1"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kilometers">Kilometers Driven (km)</label>
+                        <input
+                            type="number"
+                            id="kilometers"
+                            placeholder="e.g. 82000"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" id="predict-button">
+                        <span id="button-text">Estimate Vehicle Price</span>
+                        <span>→</span>
+                    </button>
+
+                    <p id="error-message" class="error-message"></p>
+
+                </form>
+            </div>
+
+            <aside class="result-card">
+
+                <div class="result-top">
+                    <span class="result-label">YOUR ESTIMATED VALUE</span>
+                    <div class="result-icon">৳</div>
+                </div>
+
+                <div id="result-content" class="result-content">
+                    <div class="placeholder-icon">✦</div>
+                    <h3>Your estimate will appear here</h3>
+                    <p>
+                        Complete the vehicle details and click the estimate
+                        button to see the predicted price.
+                    </p>
+                </div>
+
+                <div class="performance">
+                    <h3>Model Performance</h3>
+
+                    <div class="performance-item">
+                        <span>Test R² Score</span>
+                        <strong>73.63%</strong>
+                    </div>
+
+                    <div class="performance-item">
+                        <span>Test MAE</span>
+                        <strong>৳5.87 lakh</strong>
+                    </div>
+
+                    <p>
+                        These are evaluation results on the test dataset,
+                        not a confidence score for an individual prediction.
+                    </p>
+                </div>
+
+            </aside>
+
+        </section>
+
+        <footer>
+            <p>AutoValue · Machine Learning Based Vehicle Valuation</p>
+            <span>Built with FastAPI & Random Forest</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

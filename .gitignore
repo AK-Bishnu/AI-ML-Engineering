@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# ML experiment artifacts
+mlruns/
+
+# IDE and system files
+.vscode/
+.DS_Store
